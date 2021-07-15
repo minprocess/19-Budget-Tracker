@@ -15,7 +15,12 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/budgetdb", {
+
+const uri = "mongodb+srv://wtpate:blirb4(Red@cluster0.5x8rg.mongodb.net/budgetdb?retryWrites=true&w=majority";
+//mongodb+srv://wtpate:blirb4(Red@cluster0.5x8rg.mongodb.net/budgetdb?retryWrites=true&w=majority
+//mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/budgetdb", {
+
+mongoose.connect(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
