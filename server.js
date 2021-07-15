@@ -19,7 +19,7 @@ app.use(express.static("public"));
 const uri = "mongodb+srv://wtpate:blirb4(Red@cluster0.5x8rg.mongodb.net/budgetdb?retryWrites=true&w=majority";
 
 //mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/budgetdb", {
-mongoose.connect(MONGODB_URI || uri, {
+mongoose.connect(process.env.MONGODB_URI || uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
