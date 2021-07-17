@@ -18,7 +18,8 @@ function populateTotal() {
   // reduce transaction amounts to a single total value
   let total = transactions.reduce((total, t) => {
     return total + parseInt(t.value);
-  }, 0);
+  }, 0)
+  .toFixed(2);
 
   let totalEl = document.querySelector("#total");
   totalEl.textContent = total;
@@ -136,6 +137,10 @@ function sendTransaction(isAdding) {
   })
   .catch(err => {
     // fetch failed, so save in indexed db
+    console.log("err ", err)
+    console.log("transaction")
+    console.log(transaction)
+    alert("err in index.js post transaction")
     saveRecord(transaction);
 
     // clear form
