@@ -137,10 +137,7 @@ function sendTransaction(isAdding) {
   })
   .catch(err => {
     // fetch failed, so save in indexed db
-    console.log("err ", err)
-    console.log("transaction")
-    console.log(transaction)
-    alert("err in index.js post transaction")
+    alert("This transaction could not be posted in remote database due to network error. It is being saved locally and will be posted in remote database when another transaction is made and the remote database is online")
     saveRecord(transaction);
 
     // clear form
