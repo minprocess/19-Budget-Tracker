@@ -8,7 +8,6 @@ fetch("/api/transaction")
   .then(data => {
     // save db data on global variable
     transactions = data;
-
     populateTotal();
     populateTable();
     populateChart();
@@ -16,7 +15,8 @@ fetch("/api/transaction")
 
 function populateTotal() {
   // reduce transaction amounts to a single total value
-  let total = transactions.reduce((total, t) => {
+  let total = transactions
+    .reduce((total, t) => {
     return total + parseInt(t.value);
   }, 0)
   .toFixed(2);
